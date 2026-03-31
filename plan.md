@@ -125,6 +125,39 @@ El plan incluye:
 - **Equipo recomendado:** 1–2 desarrolladores full-stack cuantitativos.
 - **Priorización:** Si el tiempo es limitado, prioriza Fases 1–4 + backtesting (Fase 6).
 - **Escalabilidad futura**: Los módulos críticos (Radar, Event Analyzer) pueden convertirse en microservicios.
-- Un cronograma Gantt en texto?
 
-¡Avísame!
+```mermaid
+gantt
+    title Plan de Desarrollo: Sistema de Trading Cuantitativo Híbrido v1.3
+    dateFormat  YYYY-MM-DD
+    section Infraestructura Base
+    Dual Data Pipeline           :a1, 2026-04-01, 14d
+    Validación de Datos         :a2, after a1, 7d
+
+    section Feature & Model Engine
+    Feature Engine              :b1, 2026-04-15, 10d
+    Model Engine (por activo)   :b2, after b1, 11d
+
+    section Ensemble & Validación
+    Ensemble Engine             :c1, 2026-05-06, 10d
+    ContextualSignalValidator   :c2, after c1, 11d
+    Strategy Engine             :c3, after c2, 5d
+
+    section Gestión de Órdenes y Riesgo
+    OMS                         :d1, 2026-05-27, 7d
+    Account Manager             :d2, after d1, 7d
+    Logging & Auditoría         :d3, after d2, 7d
+
+    section Visualización y Monitoreo
+    Radar de Acciones           :e1, 2026-06-17, 7d
+    Economic Event Analyzer     :e2, after e1, 7d
+    Web Dashboard               :e3, after e2, 7d
+
+    section Backtesting y Optimización
+    Backtesting Unificado       :f1, 2026-07-08, 10d
+    Performance Analyzer        :f2, after f1, 4d
+
+    section Lanzamiento Final
+    Pruebas Finales             :g1, 2026-07-22, 3d
+    Documentación y Checklist   :g2, after g1, 2d
+```
